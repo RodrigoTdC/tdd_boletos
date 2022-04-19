@@ -30,11 +30,14 @@ public class ProcessadorTest {
 		
 		listaDeBoletos.remove(0);
 		
-		Fatura f2 = new Fatura("24/08/2022", 2406.00, "Lina Conde Maranhão");
+		Fatura f2 = new Fatura("24/08/2022", 2000.00, "Lina Conde Maranhão");
 		processador.processar(f2, listaDeBoletos);
 		
-		Assertions.assertTrue(f2.getFaturaPaga());
+		Assertions.assertFalse(f2.getFaturaPaga());
 		Assertions.assertEquals(880.50, f2.getTotalPago());
+		
+		System.out.println("f1 foi paga? " + f1.getFaturaPaga() + " | R$" + f1.getTotalPago() + " de R$" + f1.getValor());
+		System.out.println("f2 foi paga? " + f2.getFaturaPaga() + " | R$" + f2.getTotalPago() + " de R$" + f2.getValor());
 	}
 	
 }

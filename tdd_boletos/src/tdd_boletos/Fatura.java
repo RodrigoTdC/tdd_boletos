@@ -7,7 +7,7 @@ public class Fatura {
 	private String data;
 	private double valor;
 	private String nomeCliente;
-	private boolean faturaPaga = true;
+	private boolean faturaPaga = false;
 	private ArrayList<Pagamento> pagamentos;
 	private double totalPago = 0;
 	
@@ -27,11 +27,19 @@ public class Fatura {
 		return this.faturaPaga;
 	}
 	
+	public double getValor() {
+		return this.valor;
+	}
+	
 	public void addTotalPago(double valorPago) {
 		this.totalPago += valorPago;
 	}
 	
 	public void addPagamentos(ArrayList<Pagamento> novosPagamentos) {
 		pagamentos.addAll(novosPagamentos);
+	}
+	
+	public void setFaturaPaga() {
+		this.faturaPaga = true;
 	}
 }

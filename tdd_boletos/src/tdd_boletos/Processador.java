@@ -10,9 +10,12 @@ public class Processador {
 		
 		for (Boleto boleto : boletos) {
 			double valorBoleto = boleto.getValor();
-			System.out.println(valorBoleto);
 			valorTotal += valorBoleto;
 			pagamentos.add (new Pagamento(valorBoleto, boleto.getData(), "BOLETO"));
+		}
+		
+		if (fatura.getValor() - fatura.getTotalPago() <= valorTotal) {
+			fatura.setFaturaPaga();
 		}
 		
 		fatura.addPagamentos(pagamentos);
