@@ -12,4 +12,12 @@ public class Boleto {
 		this.data = data;
 		this.valor = valor;
 	}
+	
+	public double getValor() {
+		return this.valor;
+	}
+	
+	public String getData() {
+		return this.data;
+	}
 }

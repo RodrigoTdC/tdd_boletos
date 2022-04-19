@@ -22,7 +22,8 @@ public class ProcessadorTest {
 		
 		processador.processar(f1, listaDeBoletos);
 		
-		Assertions.assertEquals(true, f1.getFaturaPaga());
+		Assertions.assertTrue(f1.getFaturaPaga());
+		Assertions.assertEquals(2461.25, f1.getTotalPago());
 	}
 	
 }
